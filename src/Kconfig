@@ -1,0 +1,284 @@
+menu "Moui Configuration"
+
+    menu "Widgets"
+        config MOUI_USE_LABEL
+            bool "Label"
+            default y
+
+        config MOUI_USE_BUTTON
+            bool "Button"
+            default y
+
+        config MOUI_USE_LIST
+            bool "List"
+            default y
+
+        config MOUI_USE_SLIDER
+            bool "Slider"
+            default y
+
+        config MOUI_USE_SWITCH
+            bool "Switch"
+            default y
+
+        config MOUI_USE_PROGRESS
+            bool "Progress bar"
+            default y
+
+        config MOUI_USE_RADIO
+            bool "Radio group"
+            default y
+
+        config MOUI_USE_CHART
+            bool "Chart"
+            default y
+
+        config MOUI_USE_SCROLL
+            bool "ScrollView"
+            default y
+
+        config MOUI_USE_STATUSBAR
+            bool "Status bar"
+            default y
+
+        config MOUI_USE_SPINNER
+            bool "Spinner (number stepper)"
+            default y
+
+        config MOUI_USE_TAB
+            bool "Tab pages"
+            default n
+
+        config MOUI_USE_DROPDOWN
+            bool "Dropdown select"
+            default n
+
+        config MOUI_USE_TEXTINPUT
+            bool "Text input"
+            default n
+
+        config MOUI_USE_GAUGE
+            bool "Gauge (semicircle meter)"
+            default n
+
+        config MOUI_USE_TABLE
+            bool "Table"
+            default n
+
+        config MOUI_USE_BTNMATRIX
+            bool "Button matrix"
+            default n
+
+        config MOUI_USE_CALENDAR
+            bool "Calendar"
+            default n
+
+        config MOUI_USE_IMAGE
+            bool "Image (bitmap + RLE)"
+            default y
+
+        config MOUI_USE_RING
+            bool "Ring (arc progress)"
+            default n
+
+        config MOUI_USE_KEYBOARD
+            bool "On-screen keyboard"
+            default n
+
+        config MOUI_USE_EXTRA
+            bool "Extra widgets (Dots, Number, Stepper, Sparkline, Checklist)"
+            default n
+
+        config MOUI_USE_MISC
+            bool "Misc widgets (Marquee, Badge, Divider, Loading)"
+            default n
+    endmenu
+
+    menu "Features"
+        config MOUI_USE_QRCODE
+            bool "QR code generator"
+            default n
+            help
+                Adds ~2KB Flash. Enable if you need to display QR codes.
+
+        config MOUI_USE_DITHER
+            bool "Dither fill patterns"
+            default y
+
+        config MOUI_USE_PATTERN
+            bool "Texture patterns"
+            default y
+
+        config MOUI_USE_ICONS
+            bool "Built-in icon set"
+            default y
+
+        config MOUI_USE_I18N
+            bool "Internationalization (i18n)"
+            default n
+
+        config MOUI_USE_GRID
+            bool "Grid layout"
+            default y
+
+        config MOUI_USE_POPUP
+            bool "Popup / dialog"
+            default y
+
+        config MOUI_USE_ANIM
+            bool "Animation engine"
+            default y
+    endmenu
+
+    menu "Drivers"
+        config MOUI_USE_DRV_SSD1306
+            bool "SSD1306 OLED (128x64/32, I2C/SPI)"
+            default n
+
+        config MOUI_USE_DRV_SSD1309
+            bool "SSD1309 OLED (128x64, I2C/SPI)"
+            default n
+
+        config MOUI_USE_DRV_SH1106
+            bool "SH1106 OLED (128x64, I2C/SPI)"
+            default n
+
+        config MOUI_USE_DRV_ST7565
+            bool "ST7565 LCD (128x64, SPI)"
+            default n
+
+        config MOUI_USE_DRV_ST7567
+            bool "ST7567 COG LCD (128x64, SPI)"
+            default n
+
+        config MOUI_USE_DRV_ST7920
+            bool "ST7920 Graphic LCD (128x64, SPI)"
+            default n
+
+        config MOUI_USE_DRV_UC1701
+            bool "UC1701 LCD (128x64, SPI)"
+            default n
+
+        config MOUI_USE_DRV_UC8151
+            bool "UC8151 E-Paper (296x128, SPI)"
+            default n
+
+        config MOUI_USE_DRV_SSD1677
+            bool "SSD1677 E-Paper (280x480, SPI)"
+            default n
+
+        config MOUI_USE_DRV_CST836U
+            bool "CST836U Capacitive Touch (I2C)"
+            default n
+    endmenu
+
+    menu "Fonts"
+        config MOUI_USE_FONT_ASCII_6X8
+            bool "ASCII 6x8 bitmap"
+            default y
+
+        config MOUI_USE_FONT_INTER_12
+            bool "Inter 12px"
+            default n
+
+        config MOUI_USE_FONT_INTER_16
+            bool "Inter 16px"
+            default n
+
+        config MOUI_USE_FONT_INTER_24
+            bool "Inter 24px"
+            default n
+
+        config MOUI_USE_FONT_INTER_32
+            bool "Inter 32px"
+            default n
+
+        config MOUI_USE_FONT_INTER_48
+            bool "Inter 48px"
+            default n
+
+        config MOUI_USE_FONT_INTER_16_AA
+            bool "Inter 16px anti-aliased (2bpp)"
+            default n
+
+        config MOUI_USE_FONT_INTER_24_AA
+            bool "Inter 24px anti-aliased (2bpp)"
+            default n
+
+        config MOUI_USE_FONT_CN_12
+            bool "Chinese 12px (~150 KB, common chars + symbols)"
+            default n
+
+        config MOUI_USE_FONT_CN_16
+            bool "Chinese 16px (~175 KB, common chars + symbols)"
+            default n
+
+        config MOUI_USE_FONT_CN_24
+            bool "Chinese 24px (~718 KB, full GB2312 + symbols)"
+            default n
+
+        config MOUI_USE_FONT_CN_28
+            bool "Chinese 28px (~1.0 MB, full GB2312 + symbols)"
+            default n
+
+        config MOUI_USE_FONT_CN_32
+            bool "Chinese 32px (~1.1 MB, full GB2312 + symbols)"
+            default n
+
+        config MOUI_USE_FONT_WQY_16
+            bool "WenQuanYi Bitmap Song 16px (~346 KB, full GB2312 + symbols)"
+            default n
+    endmenu
+
+    menu "Tuning"
+        config MOUI_SCREEN_MAX_WIDGETS
+            int "Max widgets per screen"
+            default 16
+            range 4 64
+
+        config MOUI_SCREEN_STACK_SIZE
+            int "Screen stack depth"
+            default 8
+            range 2 32
+
+        config MOUI_ANIM_POOL_SIZE
+            int "Animation pool size"
+            default 16
+            range 4 64
+
+        config MOUI_INPUT_QUEUE_SIZE
+            int "Input event queue size"
+            default 8
+            range 4 32
+
+        config MOUI_EVT_MAX_HANDLERS
+            int "Event bus max handlers"
+            default 16
+            range 4 64
+
+        config MOUI_CLIP_STACK_DEPTH
+            int "Clip stack depth"
+            default 8
+            range 4 16
+
+        config MOUI_CONTAINER_MAX_CHILDREN
+            int "Layout container max children"
+            default 16
+            range 4 64
+
+        config MOUI_QR_MAX_VERSION
+            int "QR code max version"
+            default 6
+            range 1 10
+            depends on MOUI_USE_QRCODE
+
+        config MOUI_DEBUG_BOUNDS
+            bool "Draw debug bounding boxes"
+            default n
+
+        config MOUI_LOG_ENABLE
+            bool "Enable logging"
+            default y
+    endmenu
+
+endmenu
