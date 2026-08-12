@@ -3,8 +3,8 @@
 # ---------------------------------------------------------------------------
 
 if(ESP_PLATFORM)
-    # ESP-IDF 固件构建：直接在根目录注册 ESP-IDF 组件
-    # 避免在扫描 Pass 误调用 add_subdirectory() 触发 'add_subdirectory command is not scriptable'
+    # ESP-IDF Component Build: Register component directly at root level
+    # Avoid invoking add_subdirectory() during dependency scanning pass
     file(GLOB_RECURSE MOUI_SRCS "src/*.c" "fonts/*.c")
     idf_component_register(
         SRCS ${MOUI_SRCS}
