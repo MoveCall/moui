@@ -43,7 +43,7 @@ ESP 组件库索引: `movecall/moui`
 ```yaml
 # idf_component.yml
 dependencies:
-  movecall/moui: "^0.1.4"
+  movecall/moui: "^0.1.5"
 ```
 
 ## ⚡ 极简上手示例 ("Hello Moui")

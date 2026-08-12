@@ -3,9 +3,12 @@
 # ---------------------------------------------------------------------------
 
 if(ESP_PLATFORM)
-    # ESP-IDF Component Build: Skip top-level project() call to avoid
-    # 'project command is not scriptable' error in ESP-IDF dependency scanning pass.
-    add_subdirectory(src)
+    # ESP-IDF Component Build: Register component directly at root level
+    file(GLOB_RECURSE MOUI_SRCS "src/*.c" "fonts/*.c")
+    idf_component_register(
+        SRCS ${MOUI_SRCS}
+        INCLUDE_DIRS "src" "fonts"
+    )
 else()
     # Desktop Simulator / Unit Test Build
     cmake_minimum_required(VERSION 3.16)
