@@ -43,7 +43,7 @@ ESP Component Registry: `movecall/moui`
 ```yaml
 # idf_component.yml
 dependencies:
-  movecall/moui: "^0.1.0"
+  movecall/moui: "^0.1.3"
 ```
 
 ## Minimal Example ("Hello Moui")
