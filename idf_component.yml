@@ -1,4 +1,4 @@
-version: "0.1.2"
+version: "0.1.3"
 description: "Moui — lightweight mono-display UI framework for OLED, RLCD and E-Paper"
 url: "https://github.com/movecall/moui"
 license: "MIT"
@@ -25,3 +25,4 @@ files:
     - "build*/**"
     - "dist/**"
     - "docs/**"
+    - "assets/**"
