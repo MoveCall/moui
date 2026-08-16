@@ -98,6 +98,7 @@ typedef struct {
     bool analog_enabled;
     bool initial_refresh;
     bool force_partial;
+    bool force_full_partial_once;
     int  partial_count;
 } moui_drv_ssd1677_t;
 
@@ -105,6 +106,7 @@ int            moui_drv_ssd1677_init(moui_drv_ssd1677_t *drv, const moui_ssd1677
 void           moui_drv_ssd1677_deinit(moui_drv_ssd1677_t *drv);
 moui_backend_t *moui_drv_ssd1677_backend(moui_drv_ssd1677_t *drv);
 void           moui_drv_ssd1677_set_partial(moui_drv_ssd1677_t *drv, bool force);
+void           moui_drv_ssd1677_force_full_partial_once(moui_drv_ssd1677_t *drv);
 
 #ifdef __cplusplus
 }

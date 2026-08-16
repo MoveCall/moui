@@ -390,6 +390,14 @@ static void ssd1677_hw_flush(const uint8_t *pixels, uint32_t len, void *user)
     dirty_rect_t dr = calc_dirty_rect(pixels, drv->prev_buf, pw, ph);
     if (dr.w == 0 && dr.h == 0) return;
 
+    /* One-shot full-screen dirty rect: force partial waveform over the
+     * whole panel. Useful for testing/handling local dirty rects that
+     * affect other regions on rotated screens. */
+    if (drv->force_partial && drv->force_full_partial_once) {
+        dr = (dirty_rect_t){0, 0, pw, ph};
+        drv->force_full_partial_once = false;
+    }
+
     int total_pixels = pw * ph;
     int dirty_pixels = dr.w * dr.h;
     bool use_full = (dirty_pixels * 2 > total_pixels) && !drv->force_partial;
@@ -687,4 +695,9 @@ void moui_drv_ssd1677_set_partial(moui_drv_ssd1677_t *drv, bool force)
 {
     drv->force_partial = force;
     drv->partial_count = 0;
+}
+
+void moui_drv_ssd1677_force_full_partial_once(moui_drv_ssd1677_t *drv)
+{
+    drv->force_full_partial_once = true;
 }
