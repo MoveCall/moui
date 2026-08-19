@@ -46,7 +46,7 @@ typedef enum {
     MOUI_REFRESH_SMART,
 } moui_refresh_mode_t;
 
-typedef struct {
+typedef struct moui_screen_mgr {
     moui_screen_t       *stack[MOUI_SCREEN_STACK_SIZE];
     uint8_t             depth;
     moui_anim_mgr_t      anim;

@@ -8,7 +8,7 @@ extern "C" {
 #include "../widget/moui_widget.h"
 #include "moui_ease.h"
 
-struct moui_screen_mgr_t;
+typedef struct moui_screen_mgr moui_screen_mgr_t;
 
 #define MOUI_TIMELINE_MAX_ITEMS 16
 
@@ -43,7 +43,7 @@ void moui_timeline_init(moui_timeline_t *tl);
 bool moui_timeline_add(moui_timeline_t *tl, moui_widget_t *w, moui_tl_target_t target,
                        int16_t start_val, int16_t end_val, uint32_t start_ms, uint32_t duration_ms, moui_ease_fn_t ease_fn);
 void moui_timeline_start(moui_timeline_t *tl, uint32_t now_ms);
-bool moui_timeline_update(moui_timeline_t *tl, uint32_t now_ms, struct moui_screen_mgr_t *mgr);
+bool moui_timeline_update(moui_timeline_t *tl, uint32_t now_ms, moui_screen_mgr_t *mgr);
 
 #ifdef __cplusplus
 }

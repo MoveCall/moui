@@ -35,7 +35,7 @@ void moui_timeline_start(moui_timeline_t *tl, uint32_t now_ms)
     }
 }
 
-bool moui_timeline_update(moui_timeline_t *tl, uint32_t now_ms, struct moui_screen_mgr_t *mgr)
+bool moui_timeline_update(moui_timeline_t *tl, uint32_t now_ms, moui_screen_mgr_t *mgr)
 {
     if (!tl || !tl->running) return false;
 

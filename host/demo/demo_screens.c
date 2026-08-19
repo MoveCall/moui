@@ -1219,7 +1219,7 @@ static void on_arch_play_click(moui_widget_button_t *b)
 static void arch_tick(moui_screen_t *s, uint32_t now_ms, float dt)
 {
     (void)s; (void)dt;
-    moui_timeline_update(&arch_tl, now_ms, (struct moui_screen_mgr_t *)s_mgr);
+    moui_timeline_update(&arch_tl, now_ms, s_mgr);
 }
 
 static void setup_arch_screen(void)
