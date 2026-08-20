@@ -1,0 +1,5 @@
+# ESP-IDF only loads a Kconfig file placed in the component root directory.
+# Moui's configuration options live in src/Kconfig; source it here so the
+# CONFIG_MOUI_* options are recognized by the build system and menuconfig.
+# rsource resolves relative to this file's directory (not $srctree).
+rsource "src/Kconfig"
