@@ -400,7 +400,7 @@ static void ssd1677_hw_flush(const uint8_t *pixels, uint32_t len, void *user)
 
     int total_pixels = pw * ph;
     int dirty_pixels = dr.w * dr.h;
-    bool use_full = (dirty_pixels * 2 > total_pixels) && !drv->force_partial;
+    bool use_full = (dirty_pixels * 2 > total_pixels);
 
     if (drv->force_partial && drv->partial_count >= 20) {
         use_full = true;
@@ -408,11 +408,6 @@ static void ssd1677_hw_flush(const uint8_t *pixels, uint32_t len, void *user)
     }
 
     if (use_full) {
-        set_ram_area(drv, 0, 0, pw, ph);
-        cmd(drv, 0x24);
-        data(drv, send_buf, send_len);
-        update_partial(drv);
-
         set_ram_area(drv, 0, 0, pw, ph);
         cmd(drv, 0x26);
         data(drv, send_buf, send_len);

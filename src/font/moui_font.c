@@ -148,8 +148,8 @@ int moui_font_draw_glyph_scaled(moui_draw_ctx_t *ctx, const moui_font_t *font,
     if (!g) return (font->ascii_width ? font->ascii_width : font->px_size / 2) * scale;
 
     const uint8_t *bmp = resolved->bitmap_data + g->bitmap_offset;
-    int dx = (x + g->x_offset) * scale;
-    int dy = (y + g->y_offset) * scale;
+    int dx = x + g->x_offset * scale;
+    int dy = y + g->y_offset * scale;
     int adv = (g->x_advance ? g->x_advance : g->width) * scale;
 
     if (resolved->bpp >= 2) {
